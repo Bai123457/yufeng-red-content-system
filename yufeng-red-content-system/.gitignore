@@ -1,0 +1,11 @@
+.env
+*.env
+DEEPSEEK_API_KEY.env
+OPENAI_API_KEY.env
+.streamlit/secrets.toml
+
+__pycache__/
+*.pyc
+
+output/
+data/*.csv

@@ -1,0 +1,39 @@
+app:
+  name: "昱豐保險 RED Content Engine"
+  version: "0.2.0"
+  default_brand: "昱豐保險"
+
+generation:
+  default_count: 5
+  compliance_pass_score: 80
+  use_deepseek: true
+  base_url: "https://api.deepseek.com"
+  model: "deepseek-v4-flash"
+  temperature: 0.7
+  timeout_seconds: 90
+
+options:
+  product_directions:
+    - 香港保险
+    - IUL
+    - 家庭保障
+    - 子女教育金
+    - 财富传承
+    - 企业主保险规划
+    - 高端医疗
+    - 员工福利
+    - 信托与CRS
+  audience_types:
+    - 保险小白
+    - 中产家庭
+    - 年轻父母
+    - 企业主
+    - 高净值客户
+    - 银行合作客户
+  content_types:
+    - 小白科普
+    - 避坑清单
+    - 情绪共鸣
+    - 案例场景
+    - 品牌专业观点
+    - 评论区FAQ
