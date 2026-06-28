@@ -223,7 +223,21 @@ def inject_style() -> None:
         }
 
         div[data-testid="stToolbar"],
+        div[data-testid="stDecoration"],
+        div[data-testid="stStatusWidget"],
+        div[data-testid="stMainMenu"],
+        div[data-testid="stAppDeployButton"],
+        div[data-testid="manage-app-button"],
+        div[data-testid="stCloudToolbar"],
+        button[kind="header"],
+        button[title="View fullscreen"],
+        button[title="Deploy"],
+        a[href*="streamlit.io/cloud"],
+        a[href*="share.streamlit.io"],
         .stDeployButton,
+        .stAppDeployButton,
+        .viewerBadge_container__1QSob,
+        .viewerBadge_link__1S137,
         #MainMenu {
             display: none !important;
             visibility: hidden !important;
@@ -249,8 +263,12 @@ def inject_style() -> None:
         }
 
         .block-container {
-            padding: 2rem 2.4rem 3rem;
+            padding: 0.9rem 2.4rem 3rem;
             max-width: 1440px;
+        }
+
+        [data-testid="stAppViewBlockContainer"] {
+            padding-top: 0.9rem !important;
         }
 
         div[data-baseweb="tab-list"],
@@ -444,6 +462,7 @@ def inject_style() -> None:
             border-radius: 8px;
             background: rgba(255, 255, 255, 0.68);
             padding: 24px;
+            margin-bottom: 20px;
         }
 
         .workflow {
@@ -688,7 +707,7 @@ def inject_style() -> None:
                 margin-top: 8px;
             }
             .block-container {
-                padding: 1.2rem;
+                padding: 0.8rem 1rem 2rem;
             }
         }
         </style>
@@ -1094,8 +1113,9 @@ def build_review_df(metrics_df: pd.DataFrame) -> pd.DataFrame:
 
 
 def render_content_production_tab(items: list, lang: str, export_only_passed: bool) -> None:
+    render_empty_state(lang)
+
     if not items:
-        render_empty_state(lang)
         return
 
     for item in items:
